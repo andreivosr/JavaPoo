@@ -1,10 +1,20 @@
 package br.com.screenmatch.modelos;
+import br.com.screenmatch.calculo.Classificavel;
 
-public class Serie extends Titulo {
+public class Serie extends Titulo implements Classificavel {
     private int temporadas;
     private boolean ativa;
     private int episodiosPorTemporada;
     private int minutosPorEpisodio;
+    private int totalVisualizações;
+
+    public int getTotalVisualizações() {
+        return totalVisualizações;
+    }
+
+    public void setTotalVisualizações(int totalVisualizações) {
+        this.totalVisualizações = totalVisualizações;
+    }
 
     public int getTemporadas() {
         return temporadas;
@@ -41,5 +51,14 @@ public class Serie extends Titulo {
     @Override
     public int getDuracaoEmMinutos() {
         return temporadas * episodiosPorTemporada * minutosPorEpisodio;
+    }
+
+    @Override
+    public int getClassificacao() {
+        if (totalVisualizações > 100) {
+            return 4;
+        } else {
+            return 2;
+        }
     }
 }
