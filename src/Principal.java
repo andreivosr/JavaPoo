@@ -4,6 +4,8 @@ import br.com.screenmatch.modelos.Episodio;
 import br.com.screenmatch.modelos.Filme;
 import br.com.screenmatch.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
 
@@ -39,10 +41,25 @@ public class Principal {
         FiltroRecomendacao filtro = new FiltroRecomendacao();
         filtro.filtra(meuFilme);
 
+        Filme filmeNumero3 = new Filme();
+        filmeNumero3.setNome("filme3");
+        filmeNumero3.setAnoDeLancamento(2023);
+        filmeNumero3.setDuracaoEmMinutos(200);
+
         Episodio episodio = new Episodio();
         episodio.setNumero(1);
         episodio.setSerie(lost);
         episodio.setTotalVisualizacoes(300);
         filtro.filtra(episodio);
+
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(meuFilme);
+        listaDeFilmes.add(outroFilme);
+        listaDeFilmes.add(filmeNumero3);
+        System.out.println("Tamanho da lista:  " + listaDeFilmes.size());
+        System.out.println("Primeiro Filme: " + listaDeFilmes.get(0).getNome());
+        System.out.println("Segundo Filme: " + listaDeFilmes.get(1).getNome());
+        System.out.println("Terceiro Filme: " + listaDeFilmes.get(2).getNome());
     }
 }
