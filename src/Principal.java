@@ -61,5 +61,9 @@ public class Principal {
         System.out.println("Primeiro Filme: " + listaDeFilmes.get(0).getNome());
         System.out.println("Segundo Filme: " + listaDeFilmes.get(1).getNome());
         System.out.println("Terceiro Filme: " + listaDeFilmes.get(2).getNome());
+
+        System.out.println("toString do filme: " + listaDeFilmes.get(0).toString());
+
+
     }
 }
