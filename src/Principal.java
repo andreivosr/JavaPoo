@@ -9,8 +9,7 @@ import java.util.ArrayList;
 public class Principal {
     public static void main(String[] args) {
 
-        Filme meuFilme = new Filme("O Poderoso Chefão");
-        meuFilme.setAnoDeLancamento(1970);
+        Filme meuFilme = new Filme("O Poderoso Chefão", 1970);
         meuFilme.setDuracaoEmMinutos(180);
         meuFilme.exibeFichaTecnica();
         meuFilme.avalia(8);
@@ -18,17 +17,14 @@ public class Principal {
         meuFilme.avalia(10);
         System.out.println("Total de avaliações: " + meuFilme.getTotalDeAvaliacoes());
 
-        Serie lost = new Serie();
-        lost.setNome("Lost");
-        lost.setAnoDeLancamento(2000);
+        Serie lost = new Serie("Lost", 2000);
         lost.exibeFichaTecnica();
         lost.setTemporadas(10);
         lost.setEpisodiosPorTemporada(10);
         lost.setMinutosPorEpisodio(40);
         System.out.println("Duração para maratonar Lost: " + lost.getDuracaoEmMinutos());
 
-        Filme outroFilme = new Filme("Avatar");
-        outroFilme.setAnoDeLancamento(2023);
+        Filme outroFilme = new Filme("Avatar", 2023);
         outroFilme.setDuracaoEmMinutos(200);
 
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
@@ -39,8 +35,7 @@ public class Principal {
         FiltroRecomendacao filtro = new FiltroRecomendacao();
         filtro.filtra(meuFilme);
 
-        Filme filmeNumero3 = new Filme("filme3");
-        filmeNumero3.setAnoDeLancamento(2023);
+        Filme filmeNumero3 = new Filme("filme3", 2023);
         filmeNumero3.setDuracaoEmMinutos(200);
 
         Episodio episodio = new Episodio();
@@ -60,5 +55,7 @@ public class Principal {
         System.out.println("Terceiro Filme: " + listaDeFilmes.get(2).getNome());
 
         System.out.println("toString do filme: " + listaDeFilmes.get(0).toString());
+
+
     }
 }
