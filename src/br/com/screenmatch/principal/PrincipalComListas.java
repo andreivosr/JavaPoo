@@ -9,6 +9,9 @@ import java.util.ArrayList;
 public class PrincipalComListas {
     public static void main(String[] args) {
         Filme meuFilme = new Filme("0 poderoso chefão", 1970);
+        meuFilme.avalia(10);
+        meuFilme.avalia(5);
+        meuFilme.avalia(5);
         Filme outroFilme = new Filme("Avatar", 2023);
         var filmeDoPaulo = new Filme("Dogville", 2003);
         Serie lost = new Serie("Lost", 2000);
@@ -20,8 +23,10 @@ public class PrincipalComListas {
         lista.add(lost);
         for (Titulo item : lista) {
             System.out.println(item.toString());
-            Filme filme = (Filme) item;
-            System.out.println("Classificaação:" +  filme.getClassificacao());
+            if (item instanceof Filme filme && filme.getClassificacao() > 2) {
+                System.out.println("Classificaação:" +  filme.getClassificacao());
+
+            }
         }
     }
 }
